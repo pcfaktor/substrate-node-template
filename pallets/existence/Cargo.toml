@@ -1,6 +1,6 @@
 [package]
-name = "pallet-template"
-description = "FRAME pallet template for defining custom runtime logic."
+name = "pallet-proof-of-existence"
+description = "Simple Proof of Existence application."
 version = "0.1.0"
 license = "MIT-0"
 authors.workspace = true

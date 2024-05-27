@@ -4609,6 +4609,7 @@ dependencies = [
  "pallet-aura",
  "pallet-balances",
  "pallet-grandpa",
+ "pallet-proof-of-existence",
  "pallet-sudo",
  "pallet-template",
  "pallet-timestamp",
@@ -4875,6 +4876,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "pallet-proof-of-existence"
+version = "0.1.0"
+dependencies = [
+ "frame-benchmarking",
+ "frame-support",
+ "frame-system",
+ "parity-scale-codec",
+ "scale-info",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
+]
+
+[[package]]
 name = "pallet-session"
 version = "28.0.0"
 source = "git+https://github.com/paritytech/polkadot-sdk.git?tag=polkadot-v1.9.0#3c3d6fceb82372a3019b37117aa453d564b212de"
@@ -4914,7 +4929,7 @@ dependencies = [
 
 [[package]]
 name = "pallet-template"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "frame-benchmarking",
  "frame-support",

@@ -44,6 +44,9 @@ pub use sp_runtime::{Perbill, Permill};
 /// Import the template pallet.
 pub use pallet_template;
 
+/// Import the proof-of-existence pallet.
+pub use pallet_proof_of_existence;
+
 /// An index to a block.
 pub type BlockNumber = u32;
 
@@ -251,6 +254,12 @@ impl pallet_template::Config for Runtime {
 	type WeightInfo = pallet_template::weights::SubstrateWeight<Runtime>;
 }
 
+/// Configure the pallet-proof-of-existence in pallets/existence.
+impl pallet_proof_of_existence::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+	type WeightInfo = pallet_proof_of_existence::weights::SubstrateWeight<Runtime>;
+}
+
 // Create the runtime by composing the FRAME pallets that were previously configured.
 #[frame_support::runtime]
 mod runtime {
@@ -292,6 +301,9 @@ mod runtime {
 	// Include the custom logic from the pallet-template in the runtime.
 	#[runtime::pallet_index(7)]
 	pub type TemplateModule = pallet_template;
+
+	#[runtime::pallet_index(8)]
+	pub type ProofOfExistence = pallet_proof_of_existence;
 }
 
 /// The address format for describing accounts.
@@ -342,6 +354,7 @@ mod benches {
 		[pallet_timestamp, Timestamp]
 		[pallet_sudo, Sudo]
 		[pallet_template, TemplateModule]
+		[pallet_proof_of_existence, ProofOfExistence]
 	);
 }
 
